@@ -1,0 +1,145 @@
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space items evenly */
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.logo img {
+    height: 150px; /* Adjust height as needed */
+    margin-right: 10px; /* Add some spacing between logo and h1 */
+}
+
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px; /* Add some spacing between links */
+}
+
+nav ul li:first-child {
+    margin-left: 0; /* Remove margin for the first link */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Auto-sliding images */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 400%; /* Adjust to the number of slides */
+    transition: transform 1s ease;
+}
+
+.slide {
+    flex: 1;
+    animation: slide 10s infinite; /* Auto-sliding animation */
+}
+
+.slide img {
+    width: 1275px;
+    height: 400px;
+}
+
+.slideshow-container input[type="radio"]:checked ~ .slides .slide {
+    display: none;
+}
+
+.slideshow-container input[type="radio"]:checked ~ .slides .slide:nth-child(1),
+.slideshow-container input[type="radio"]:checked ~ .slides .slide:nth-child(2),
+.slideshow-container input[type="radio"]:checked ~ .slides .slide:nth-child(3),
+.slideshow-container input[type="radio"]:checked ~ .slides .slide:nth-child(4) {
+    display: block;
+}
+
+/* Navigation radio buttons */
+.navigation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.navigation label {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    background: #999;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+/* Hide radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+
+/* Animation for auto-sliding */
+@keyframes slide {
+    0%, 100% { transform: translateX(0); }
+    25%, 50% { transform: translateX(-100%); }
+    75% { transform: translateX(-200%); }
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
